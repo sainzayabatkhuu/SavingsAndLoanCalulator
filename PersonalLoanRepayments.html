@@ -1,0 +1,317 @@
+<html><head>
+<meta charset="utf-8">
+<title>Personal loan repayments</title>
+
+<link rel="stylesheet" type="text/css" href="css/calcCSS.css">
+<link rel="stylesheet" type="text/css" href="css/glyphicons.css">
+
+<script src="js/chart.js" type="application/javascript"></script>
+</head>
+
+<body>
+<div id="calc_body">
+    <div class="calc-wrapper" id="calculator">
+    	<div class="calc-header">
+            <h3 class="title">Personal loan repayments</h3>
+
+            <ul id="calcheadermenu"><li><canvas id="myinterest" width="20" height="15"></canvas>Interest</li><li><canvas id="myPrincipal" width="20" height="15"></canvas>Principal</li></ul>
+        </div>
+        
+        <div class="calc-body">
+        	<div class="calc-left-bar">
+            	<div class="yourloandetails">Your loan details</div>
+                <div class="loandetails">
+                
+                	<form action="" method="post" class="loandetailsform">
+                    	<fieldset>
+                            <label>Loan amount (₮)</label>
+                            <input type="text" id="amount" value="500000" onblur="init();">
+                        </fieldset>
+                        
+                        <fieldset>
+                            <label>Interest rate</label>
+                            <input type="text" id="rate" value="8%" onblur="init();">
+                        </fieldset>
+                        
+                        <fieldset>
+                            <label>Loan term</label>
+                            <input type="text" id="time" value="180 Months" onblur="init();">
+                        </fieldset>
+                        
+                        <fieldset>
+							<label>Views</label>
+                            <input type="radio" name="type" id="type1" checked="" onchange="init();"><span>Principle and interest</span>
+                            <br class="clear">
+                            <input type="radio" name="type" id="type2" onchange="init();"><span>Interest only</span>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            
+            
+            <div class="calc-result" style="">
+            	<div class="tabs">
+                	<div class="tabs-menu">
+                    	<ul>
+                        	<li id="graphic" class="active"><i class="glyphicons stats"></i>Chart</li>
+                            <li id="table"><i class="glyphicons table"></i>Schedule</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="result">
+                    	<canvas id="graphic_contant" style="display:block;" width="415" height="335">
+                        </canvas>
+                        <div id="table_contant" style="display:none;float:left;">
+                        	<table>
+                            	<thead>
+                                	<tr>
+                                    	<th>Months</th>
+                                        <th>Loan balance</th>
+                                        <th>Loan payment</th>
+                                        <th>Interest amount</th>
+                                        <th>Total payment</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="loan_table"></tbody>
+                            </table>
+                        </div>
+                        <div id="popup_info" class="right" style="display: none; top: 30px; left: 63px;"><div class="info"><h4>2 Month</h4><p><span style="float:left;width:80px;color:#000;">Owing: </span><span style="font-weight:bold;color:#505050;font-size:12px;float:left;">85,342,984₮</span></p><p><span style="float:left;width:80px;color:#000;">Principal: </span><span style="font-weight:bold;color:#505050;font-size:12px;float:left;">50,000,000₮</span></p><p><span style="float:left;width:80px;color:#000;">Interest: </span><span style="font-weight:bold;color:#505050;font-size:12px;float:left;">35,342,984.21₮</span></p></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="calc-footer">
+        	<div class="footer" id="footer"><span style="font-size:12px;color:#333;width:90px;font-weight:bold;display:block;float:left;font-family:Arial, Helvetica, sans-serif;">Menthly payment:</span><span style="display:block;float:left;font-family:Arial, Helvetica, sans-serif;margin-right:10px;"><span style="font-size:20px;color:#000;font-weight:bold;line-height:32px;"><span style="float:left;">477,826</span><span style="font-size:18px;float:left;margin-left:5px;line-height:26px;font-weight:100;">.04₮</span></span></span><span style="font-size:12px;color:#333;width:100px;font-weight:bold;display:block;float:left;font-family:Arial, Helvetica, sans-serif;">Household income in month:</span><span style="display:block;float:left;font-family:Arial, Helvetica, sans-serif;"><span style="font-size:20px;color:#000;font-weight:bold;line-height:32px;"><span style="float:left;">1,061,835</span><span style="font-size:18px;float:left;margin-left:5px;line-height: 26px;font-weight:100;">.65₮</span></span></span></div>
+			<a class="calcInfo" id="calcInfo" href="javascript:window.print()"></a>
+        </div>
+        </div>
+        <div id="calculatorInfo" style="display:none;">
+            <p class="close_bttn_p"><span class="close_bttn" id="close_bttn">x</span></p>
+            <h3>Тооцоолуурын мэдээлэл</h3>
+            <p>.</p>
+            <h4>Тооцоолуурын ойлголт</h4>
+            <h4>Сарын урт</h4>
+            <p>Саруудын дундаж урт буюу жилийн 365 хоногийг арван 12 сард хуваасан тэнцүү урт байна. Өгөгдсөн саруудын зарим нь бусад саруудаас өөр байдаг болхоог хүүгийн хэмжээ тухайн сараас шалтгаална.</p>
+            <h4>Compounding Frequencies</h4>
+            <p>The calculator assumes both deposits and any interest crediting is performed at the same time/frequency. The frequency can be changed by the user.</p>
+            <h4>Санамж</h4>
+            <p>Сар бүрийн хэдний өдөр орлого хийж байгаагаас хамаарч бодогдох хүүний хэмжээ өөрчлөгдөж болно.</p>
+        </div>
+            
+		<script>
+        /* Энд тавийг солих үйлдэл хийгдэж байна */
+        var graphic         = document.getElementById("graphic");
+        var table           = document.getElementById("table");
+        var graphic_contant = document.getElementById("graphic_contant");
+        var table_contant   = document.getElementById("table_contant");
+        graphic.onclick = function (){
+            graphic_contant.style.display  = 'block';
+            table_contant.style.display    = 'none';
+            graphic.className              = 'active';
+            table.className                = '';
+        };
+        table.onclick = function (){
+            table_contant.style.display    = 'block';
+            graphic_contant.style.display  = 'none';
+            graphic.className              = '';
+            table.className                = 'active';
+        };
+        </script>
+    </div>
+    
+    
+    
+    
+
+
+
+<script type="application/javascript">
+
+// JavaScript Document
+window.onload = init;
+
+function init(){	
+	validation();
+	calculator();
+};
+
+function tabs(){
+	
+};
+
+function validation(){
+	if(100000 > parseFloat(document.getElementById("amount").value) ) {
+		document.getElementById("amount").value = '300000₮';
+	}
+	if(0 >= parseFloat(document.getElementById("rate").value) || parseInt(document.getElementById("rate").value) > 25 ) {
+		document.getElementById("rate").value = '23%';
+	}
+	
+	if(1 > parseFloat(document.getElementById("time").value) || parseInt(document.getElementById("time").value) > 600 ) {
+		document.getElementById("time").value = '6 сар';
+	}
+};
+
+function calculator() {
+	
+	/*  */
+	var amount    = parseFloat(document.getElementById("amount").value);
+	var rate      = parseFloat(document.getElementById("rate").value) / 100 / 365;
+	var time      = parseFloat(document.getElementById("time").value);
+	var mounth    = 365/12;
+	var repayment = 0;
+	var repayment_sum = 0;
+	var calcTotal = repayment * time;
+	var calcAm    = amount;
+	var data1     = new Array();
+	var data2     = new Array();
+	var totalInterest = 0;
+	
+	for (var i = 1;i <= time;i++) {
+		if (i != 1) {
+			repayment = 1 / ( rate * mounth + 1 ) * repayment;
+		} else {
+			repayment = 1 / ( rate * mounth + 1 );
+		}
+		repayment_sum += repayment;
+	}
+	repayment = amount / repayment_sum;
+	
+	if (document.getElementById("type1").checked)
+		for (var i = 0;i <= time;i++) {
+			if (i != 0) {
+				calcAm = calcAm - (repayment-(calcAm * rate * mounth));
+			}
+			data1.push({'x' : (i), 'y' : calcAm});
+		}
+	
+	if (document.getElementById("type2").checked)
+		for (var i = 0;i <= time;i++) {
+			data1.push({'x' : (i), 'y' : amount});
+		}
+	calcAm    = amount;
+	for (var i = 0;i <= time;i++) {
+		totalInterest = totalInterest + (calcAm * rate * mounth);
+		calcAm = calcAm - (repayment-(calcAm * rate * mounth));
+	}
+	calcTotal = totalInterest + amount;
+	calcAm    = amount;
+	var hvsnegt = '';
+	
+	//өрхий оролого бодож байгаа хэсэг энийг хаавал нийт хүүгийн төлөлт гарна.
+	totalInterest = ( repayment * 100 ) / 45;
+	
+	if (document.getElementById("type1").checked)
+		for (var i = 0;i <= time;i++) {
+			if(i != 0){
+				if(i > 7) {
+					hvsnegt += '<tr><td>'+i+'</td>'+
+					'<td>'+formatMoney( calcAm )+'</td>'+
+					'<td>'+formatMoney( repayment - calcAm * rate * mounth )+'</td>'+
+					'<td>'+formatMoney( calcAm * rate * mounth )+'</td>'+
+					'<td>'+formatMoney( repayment )+'</td></tr>';
+				}
+				else {
+					hvsnegt += '<tr print-enable="true"><td>'+i+'</td>'+
+					'<td>'+formatMoney( calcAm )+'</td>'+
+					'<td>'+formatMoney( repayment - calcAm * rate * mounth )+'</td>'+
+					'<td>'+formatMoney( calcAm * rate * mounth )+'</td>'+
+					'<td>'+formatMoney( repayment )+'</td></tr>';
+				}
+			}
+			var money = 0;
+			if (i != 0) {
+				money = calcTotal - repayment;
+				calcTotal = calcTotal - repayment;
+				calcAm = calcAm - (repayment-(calcAm * rate * mounth));
+			}
+			else
+				money = calcTotal;
+			data2.push({'x' : i, 'y' : money});
+		}
+	
+	if (document.getElementById("type2").checked)
+		for (var i = 0;i <= time;i++) {
+			if(i!=0){
+				if(i > 7) {
+					hvsnegt += '<tr><td>'+i+'</td>'+
+					'<td>'+formatMoney(calcAm)+' aaa</td>'+
+					'<td>'+formatMoney(repayment-(calcAm * rate * mounth))+'</td>'+
+					'<td>'+formatMoney(calcAm * rate )+'</td>'+
+					'<td>'+formatMoney(repayment)+'</td></tr>';
+				} else {
+					hvsnegt += '<tr print-enable="true"><td>'+i+'</td>'+
+					'<td>'+formatMoney(calcAm)+' aaa</td>'+
+					'<td>'+formatMoney(repayment-(calcAm * rate * mounth))+'</td>'+
+					'<td>'+formatMoney(calcAm * rate )+'</td>'+
+					'<td>'+formatMoney(repayment)+'</td></tr>';
+				}
+			}
+			var money = 0;
+			if (i != 0) {
+				money = calcTotal - (calcAm * rate * mounth );
+				calcTotal = calcTotal - (calcAm * rate * mounth );
+				calcAm = calcAm - (repayment-(calcAm * rate * mounth));
+			}
+			else
+				money = calcTotal;
+			data2.push({'x' : i, 'y' : money});
+		}
+	
+	document.getElementById("loan_table").innerHTML = hvsnegt;
+
+	document.getElementById('footer').innerHTML = "<span style=\"font-size:12px;color:#333;width:90px;font-weight:bold;display:block;float:left;font-family:Arial, Helvetica, sans-serif;\">Menthly payment:</span><span style=\"display:block;float:left;font-family:Arial, Helvetica, sans-serif;margin-right:10px;\"><span style=\"font-size:20px;color:#000;font-weight:bold;line-height:32px;\"><span style=\"float:left;\">"+ splitString(formatMoney(repayment),'.')[0]+'</span><span style="font-size:14px;float:left;margin-left:5px;line-height:26px;font-weight:100;">.'+ splitString(formatMoney(repayment)+'₮','.')[1] +"</span></span></span><span style=\"font-size:12px;color:#333;width:100px;font-weight:bold;display:block;float:left;font-family:Arial, Helvetica, sans-serif;\">Household income in month:</span><span style=\"display:block;float:left;font-family:Arial, Helvetica, sans-serif;\"><span style=\"font-size:20px;color:#000;font-weight:bold;line-height:32px;\"><span style=\"float:left;\">"+ splitString(formatMoney(totalInterest),'.')[0] +'</span><span style="font-size:14px;float:left;margin-left:5px;line-height: 26px;font-weight:100;">.'+splitString(formatMoney(totalInterest)+'₮','.')[1]+"</span></span>";
+	
+	document.getElementById('calcheadermenu').innerHTML = "<li><canvas id=\"myinterest\" width=\"20\" height=\"15\"></canvas>Interest</li><li><canvas id=\"myPrincipal\" width=\"20\" height=\"15\"></canvas>Principal</li>"
+	
+	var myinterest = document.getElementById('myinterest');
+	var cx_myinterest = myinterest.getContext('2d');
+
+	var myPrincipal = document.getElementById('myPrincipal');
+	var cx_myPrincipal = myPrincipal.getContext('2d');
+
+	cx_myinterest.beginPath();
+	cx_myinterest.rect(0, 0, 20, 15);
+	cx_myinterest.fillStyle = '#61465e';
+	cx_myinterest.fill();
+
+	cx_myPrincipal.beginPath();
+	cx_myPrincipal.rect(0, 0, 578, 200);
+	cx_myPrincipal.fillStyle = '#10999A';
+	cx_myPrincipal.fill();
+            
+	new chart({
+		render:{
+			renderTo : 'graphic_contant',
+			type : 'loan',
+                        lang : 'en'
+		},
+		xAxis:{
+			title: {
+				text:"Term (in month)"
+			}
+		},
+		yAxis:{
+			title: {
+				text:"Loan amount"
+			}
+		},
+		series:[
+			{
+				color: '#61465e',
+				data: data2
+			},{
+				color: '#10999A',
+				data: data1
+			}
+			],
+		calc:{
+			loan_amount : amount,
+			loan_rate : rate,
+			loan_time : time
+		}
+		});
+	};
+
+</script></body></html>
