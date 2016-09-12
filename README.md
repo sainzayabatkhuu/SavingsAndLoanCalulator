@@ -5,7 +5,7 @@
 * [Personal Loan Repayments](https://htmlpreview.github.io/?https://github.com/Ghost0817/SavingsAndLoanCalulator/blob/master/PersonalLoanRepayments.html)
 
 * [Savings Plan Calculator](https://htmlpreview.github.io/?https://github.com/Ghost0817/SavingsAndLoanCalulator/blob/master/SavingsPlanCalculator.html)
-* 
+
 
 ## Used technologies
 
