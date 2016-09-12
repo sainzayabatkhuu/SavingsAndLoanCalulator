@@ -14,7 +14,7 @@
         <div class="calc-wrapper" id="calculator">
             <div class="calc-header">
                 <h3 class="title">Savings Plan Calculator</h3>
-                <ul id="calcheadermenu"><li><canvas id="myinterest" width="20" height="15"></canvas>Interest</li><li><canvas id="myPrincipal" width="20" height="15"></canvas>Principal</li></ul>
+                <ul id="calcheadermenu"></ul>
             </div>
             
             <div class="calc-body">
@@ -240,7 +240,7 @@ function calculator() {
 	
 	document.getElementById('footer').innerHTML = '<span style="font-size:12px;color:#000;line-height:32px;width:240px;font-weight:bold;display:block;float:left;font-family:Arial, Helvetica, sans-serif;">Total at end of term:</span><span style="display:block;float:left;font-family:Arial, Helvetica, sans-serif;margin-right:10px;"><span style="font-size:30px;color:#000;font-weight:bold;line-height:32px;"><span style="float:left;">'+splitString(formatMoney(calcAm),'.')[0]+'</span><span style="font-size:18px;float:left;margin-left:5px;line-height: 18px;font-weight:100;">.'+splitString(formatMoney(calcAm)+'₮','.')[1]+'</span></span></span><hr style="clear:both;display:block;width:95%;float:left;margin:0px;margin-left:10px;margin-top:8px;"/><span style="font-size:10px;color:#696969;line-height:32px;width:240px;font-weight:bold;display:block;float:left;font-family:Arial, Helvetica, sans-serif;">Total interest rate:</span><span style="display:block;float:left;font-family:Arial, Helvetica, sans-serif;margin-right:10px;"><span style="font-size:18px;color:#000;font-weight:bold;line-height:32px;"><span style="float:left;">'+splitString(formatMoney(totalInterest),'.')[0]+'</span><span style="font-size:12px;float:left;margin-left:5px;line-height:26px;font-weight:100;">.'+ splitString(formatMoney(totalInterest)+'₮','.')[1] +'</span></span></span>';
                         
-	document.getElementById('calcheadermenu').innerHTML = "<li><canvas id=\"myinterest\" width=\"20\" height=\"15\"></canvas>Interest</li><li><canvas id=\"myPrincipal\" width=\"20\" height=\"15\"></canvas>Principal</li>"
+	document.getElementById('calcheadermenu').innerHTML = "<li><canvas id=\"myinterest\" width=\"20\" height=\"15\"></canvas> Interest</li><li><canvas id=\"myPrincipal\" width=\"20\" height=\"15\"></canvas> Principal</li>"
 	
 	var myinterest = document.getElementById('myinterest');
 	var cx_myinterest = myinterest.getContext('2d');
