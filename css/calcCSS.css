@@ -36,7 +36,7 @@ h1,h2,h3,h4,h5,h6,p{padding:0px;margin:0px;}
 #calc_body .calc-wrapper .calc-body .calc-result .tabs .result{display:block;float:left;border-radius:5px;background-color:#efefef;width:415px;height:335px;margin:0px 5px 5px 5px;position:relative;}
 #calc_body .calc-wrapper .calc-body .calc-result .tabs .result #container{border-radius:5px;}
 #calc_body .calc-wrapper .calc-body .calc-result .tabs .result #table_contant{display:block;height:335px;overflow:auto;width:100%;}
-#calc_body .calc-wrapper .calc-body .calc-result .tabs .result #table_contant table{border-collapse:collapse;font-size:12px;font-family:Arial, Helvetica, sans-serif;display:block;}
+#calc_body .calc-wrapper .calc-body .calc-result .tabs .result #table_contant table{border-collapse:collapse;font-size:12px;font-family:Arial, Helvetica, sans-serif;width:100%;}
 #calc_body .calc-wrapper .calc-body .calc-result .tabs .result #table_contant table #loan_table{}
 #calc_body .calc-wrapper .calc-body .calc-result .tabs .result #table_contant table thead{}
 #calc_body .calc-wrapper .calc-body .calc-result .tabs .result #table_contant table thead tr{}
