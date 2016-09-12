@@ -1,0 +1,102 @@
+@charset "utf-8";
+/* CSS Document */
+@media screen {
+h1,h2,h3,h4,h5,h6,p{padding:0px;margin:0px;}
+
+.clear{clear:both;}
+
+#calc_body{max-width:602px;display:block;overflow:hidden;float:left;font-family:Arial, Helvetica, sans-serif;}
+
+#calc_body .calc-wrapper{width:600px;min-height:475px;background-color:#efefef;display:block;float:left;border:1px solid #b7babc;border-radius:5px;}
+
+
+#calc_body .calc-wrapper .calc-header{height:40px;width:100%;display:block;float:left;clear:both;background-color:#e4e4e4;border-top-left-radius:5px;border-top-right-radius:5px;}
+#calc_body .calc-wrapper .calc-header .title{font-family:Arial, Helvetica, sans-serif;margin:0px;padding-left:14px;padding-top:10px;border-top-left-radius:5px;border-top-right-radius:5px;float:left;}
+#calc_body .calc-wrapper .calc-header #calcheadermenu{float:right;padding:0px;margin:0px;margin-top:15px;}
+#calc_body .calc-wrapper .calc-header #calcheadermenu li{padding-right:10px;float:left;list-style-type:none;font-size:11px;font-weight:bold;color:#333;vertical-align: middle;}
+
+
+#calc_body .calc-wrapper .calc-body{width:100%;min-height:375px;display:block;float:left;clear:both;}
+#calc_body .calc-wrapper .calc-body .calc-left-bar{background-color:#474747;width:155px;min-height:365px;display:block;float:left;border-radius:5px;margin:5px;}
+#calc_body .calc-wrapper .calc-body .calc-left-bar .yourloandetails{color:#FFF;width:100%;text-align:center;font-weight:bold;font-size:14px;line-height:20px;}
+#calc_body .calc-wrapper .calc-body .calc-left-bar .loandetails{display:block;float:left;border-radius:5px;background-color:#FFF;width:145px;min-height:315px;margin:5px;}
+#calc_body .calc-wrapper .calc-body .calc-left-bar .loandetails .loandetailsform{width:125px;display:block;overflow:hidden;position:relative;margin-left:10px;margin-right:10px;}
+#calc_body .calc-wrapper .calc-body .calc-left-bar .loandetails .loandetailsform fieldset{padding:0px;border:0px none;margin:0px;padding-top:10px;border-bottom:1px solid #e7e7e7;padding-bottom:5px;font-family:Arial, Helvetica, sans-serif;font-size:12px;}
+#calc_body .calc-wrapper .calc-body .calc-left-bar .loandetails .loandetailsform fieldset label{font-family:Arial, Helvetica, sans-serif;font-size:12px;font-weight:bold;clear:both;display:block;padding-bottom:5px;}
+#calc_body .calc-wrapper .calc-body .calc-left-bar .loandetails .loandetailsform fieldset input[type="text"],.calc-wrapper #calc_body .calc-wrapper .calc-body .calc-left-bar .loandetails .loandetailsform fieldset input[type="number"],.calc-wrapper .calc-body .calc-left-bar .loandetails .loandetailsform fieldset select{display:block;float:left;padding:2px;width:119px;border:1px solid rgb(0,118,224);border-radius:3px;clear:both;}
+#calc_body .calc-wrapper .calc-body .calc-left-bar .loandetails .loandetailsform fieldset input[type="radio"]{float:left;display:block;width:15px;clear:left;}
+#calc_body .calc-wrapper .calc-body .calc-left-bar .loandetails .loandetailsform fieldset span{float:right;display:block;width:100px;line-height:20px;clear:right;}
+#calc_body .calc-wrapper .calc-body .calc-result{width:425px;height:365px;float:left;display:block;overflow:hidden;margin:5px;}
+#calc_body .calc-wrapper .calc-body .calc-result .tabs{width:425px;height:365px;display:block;float:left;border-radius:5px;}
+#calc_body .calc-wrapper .calc-body .calc-result .tabs .tabs-menu{width:100%;height:25px;float:left;clear:both;display:block;overflow:hidden;}
+#calc_body .calc-wrapper .calc-body .calc-result .tabs .tabs-menu ul{margin:0px auto;padding:0px;width:200px;}
+#calc_body .calc-wrapper .calc-body .calc-result .tabs .tabs-menu ul li{font-family:Arial, Helvetica, sans-serif;font-size:12px;font-weight:bold;float:left;list-style-type:none;color:#cecece;cursor:pointer;margin-right:10px;background-color:#efefef;padding:3px 10px 2px;margin-top:5px;border-top-left-radius:5px;border-top-right-radius:5px;background-color: #474747;}
+#calc_body .calc-wrapper .calc-body .calc-result .tabs .tabs-menu ul .active{color:#fff;}
+#calc_body .calc-wrapper .calc-body .calc-result .tabs .tabs-menu ul li:hover{color:#fff;}
+#calc_body .calc-wrapper .calc-body .calc-result .tabs .result{display:block;float:left;border-radius:5px;background-color:#efefef;width:415px;height:335px;margin:0px 5px 5px 5px;position:relative;}
+#calc_body .calc-wrapper .calc-body .calc-result .tabs .result #container{border-radius:5px;}
+#calc_body .calc-wrapper .calc-body .calc-result .tabs .result #table_contant{display:block;height:335px;overflow:auto;width:100%;}
+#calc_body .calc-wrapper .calc-body .calc-result .tabs .result #table_contant table{border-collapse:collapse;font-size:12px;font-family:Arial, Helvetica, sans-serif;display:block;}
+#calc_body .calc-wrapper .calc-body .calc-result .tabs .result #table_contant table #loan_table{}
+#calc_body .calc-wrapper .calc-body .calc-result .tabs .result #table_contant table thead{}
+#calc_body .calc-wrapper .calc-body .calc-result .tabs .result #table_contant table thead tr{}
+#calc_body .calc-wrapper .calc-body .calc-result .tabs .result #table_contant table thead tr th{border-bottom:1px dotted black;padding:5px;text-align:center;}
+#calc_body .calc-wrapper .calc-body .calc-result .tabs .result #table_contant table thead tr th:nth-child(2n+1){}
+#calc_body .calc-wrapper .calc-body .calc-result .tabs .result #table_contant table tbody{}
+#calc_body .calc-wrapper .calc-body .calc-result .tabs .result #table_contant table tbody tr{}
+#calc_body .calc-wrapper .calc-body .calc-result .tabs .result #table_contant table tbody tr td{border-bottom:1px dotted black;padding:5px;text-align:center;}
+#calc_body .calc-wrapper .calc-body .calc-result .tabs .result #table_contant table tbody tr td:nth-child(2n+1){background-color:#F8F8F8;}
+#calc_body .calc-wrapper .calc-body .calc-result .tabs .result #popup_info{display:block;float:left;z-index:999999;position:absolute;top:0px;left:0px;border-radius:5px;margin-left:10px;}
+#calc_body .calc-wrapper .calc-body .calc-result .tabs .result #popup_info .info{background-color:#FFF;border-radius:5px;min-width:170px;max-width:170px;min-height:60px;margin:5px;-moz-box-shadow:0px 0px 7px 5px rgba(255, 255, 255, 0.5);-webkit-box-shadow:0px 0px 7px 5px rgba(255, 255, 255, 0.5);box-shadow:0px 0px 7px 5px rgba(255, 255, 255, 0.5);padding:5px;position:inherit;}
+#calc_body .calc-wrapper .calc-body .calc-result .tabs .result #popup_info .info p{font-size:12px;font-weight:normal;font-family:Arial, Helvetica, sans-serif;color:#333;clear:both;}
+
+#calc_body .calc-wrapper .calc-footer{width:100%;min-height:60px;display:block;float:left;clear:both;background-color:#e4e4e4;border-bottom-left-radius:5px;border-bottom-right-radius:5px;}
+#calc_body .calc-wrapper .calc-footer .footer{margin:14px;display:block;float:left;width:507px;}
+#calc_body .calc-wrapper .calc-footer .calcInfo{background-image:url("../images/icons/printer_sticker.png");background-position:0px 0px;background-repeat:no-repeat;display:block;float:right;height:40px;width:46px;cursor:pointer;cursor:pointer;margin-right:10px;margin-top:14px;}
+#calc_body .calc-wrapper .calc-footer .calcInfo:hover{background-position:0px -40px;}
+#calc_body #calculatorInfo{}
+#calc_body #calculatorInfo h3{font-size:14px;font-weight:bold;color:#333;font-family:Arial, Helvetica, sans-serif;margin-bottom:5px;}
+#calc_body #calculatorInfo h4{font-size:12px;font-weight:bold;color:#333;font-family:Arial, Helvetica, sans-serif;margin-bottom:5px;}
+#calc_body #calculatorInfo p{font-size:12px;font-weight:normal;color:#333;font-family:Arial, Helvetica, sans-serif;margin-bottom:5px;text-align:justify;}
+#calc_body #calculatorInfo .close_bttn_p{display:block;width:100%;float:left;}
+#calc_body #calculatorInfo .close_bttn_p .close_bttn{background: #0076e0;background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwNzZlMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDUyOWMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);background: -moz-linear-gradient(top,  #0076e0 0%, #00529c 100%);background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0076e0), color-stop(100%,#00529c));background: -webkit-linear-gradient(top,  #0076e0 0%,#00529c 100%);background: -o-linear-gradient(top,  #0076e0 0%,#00529c 100%);background: -ms-linear-gradient(top,  #0076e0 0%,#00529c 100%);background: linear-gradient(to bottom,  #0076e0 0%,#00529c 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0076e0', endColorstr='#00529c',GradientType=0 );width:16px;height:16px;display:block;border-radius:5px;border:1px solid #333;float:right;color:#FFF;text-align:center;cursor:pointer;}
+
+
+.glyphicons_stats{width:16px;height:16px;display:block;background:url(../images/icons/glyphicons_stats.png) no-repeat center center scroll;float:left;margin-right:5px;}
+.glyphicons_table{width:16px;height:16px;display:block;background:url(../images/icons/glyphicons_table.png) no-repeat center center scroll;float:left;margin-right:5px;}
+}
+@media print {
+h1,h2,h3,h4,h5,h6,p{padding:0px;margin:0px;}
+#calc_body {width: 210mm;}
+#calc_body .calc-wrapper .calc-header .title{border:1px solid #CCC;padding:5px 10px;font-size:12px;width: 90%;}
+#calc_body .calc-wrapper .calc-header #calcheadermenu{  float: left;
+  padding: 0px;
+  margin: 0px;
+  clear: both;
+  display: block;
+  width: 100%;
+  margin-bottom: 5px;
+  margin-top: 5px;}
+#calc_body .calc-wrapper .calc-header #calcheadermenu li{padding-right:10px;float:left;list-style-type:none;font-size:11px;font-weight:bold;}
+#calc_body .calc-wrapper .calc-body .calc-left-bar{float: left;width: 25%;margin-right:5%;}
+#calc_body .calc-wrapper .calc-body .calc-left-bar .yourloandetails{}
+#calc_body .calc-wrapper .calc-body .calc-left-bar .loandetails .loandetailsform{border:1px solid #CCC;padding:5px 10px;float:left;margin-bottom:20px;font-size:11px;font-weight:bold;}
+#calc_body .calc-wrapper .calc-body .calc-left-bar .loandetails .loandetailsform fieldset{border:none;float:left;}
+#calc_body .calc-wrapper .calc-body .calc-left-bar .loandetails .loandetailsform fieldset label{clear:right;display:block;font-size:11px;}
+#calc_body .calc-wrapper .calc-body .calc-left-bar .loandetails .loandetailsform fieldset label:after{clear:both;display:block;}
+#calc_body .calc-wrapper .calc-body .calc-left-bar .loandetails .loandetailsform fieldset input[type="text"],.calc-wrapper #calc_body .calc-wrapper .calc-body .calc-left-bar .loandetails .loandetailsform fieldset input[type="number"],.calc-wrapper .calc-body .calc-left-bar .loandetails .loandetailsform fieldset select{font-size:11px;}
+#calc_body .calc-wrapper .calc-body .calc-left-bar .loandetails .loandetailsform fieldset input[type="radio"]{font-size:11px;}
+#calc_body .calc-wrapper .calc-body .calc-result .tabs .tabs-menu{display:none;visibility: hidden;}
+#calc_body .calc-wrapper .calc-body .calc-result .tabs .result #graphic_contant{display:block !important;width:30%;margin-top:18px;float:left;}
+#calc_body .calc-wrapper .calc-body .calc-result .tabs .result #popup_info{display:none !important;visibility: hidden;}
+#calc_body .calc-wrapper .calc-body .calc-result .tabs .result #table_contant{display:block !important;clear:both;width: 90%;}
+#calc_body .calc-wrapper .calc-body .calc-result .tabs .result #table_contant table{border-top:1px solid #CCC;margin-top:10px;margin-bottom:20px;width:100%;font-size:11px;}
+#calc_body .calc-wrapper .calc-body .calc-result .tabs .result #table_contant table tbody{}
+#calc_body .calc-wrapper .calc-body .calc-result .tabs .result #table_contant table tbody tr{display: none;}
+#calc_body .calc-wrapper .calc-body .calc-result .tabs .result #table_contant table tbody tr[print-enable='true'] {display: table-row;}
+#calc_body .calc-wrapper .calc-body .calc-result .tabs .result #table_contant table tbody tr td{padding:5px;text-align:right;}
+#calc_body .calc-wrapper .calc-body .calc-result .tabs .result #table_contant table tbody tr td:nth-child(2n+1){background-color:#F8F8F8;}
+#calc_body .calc-wrapper .calc-body .calc-result .tabs .result #table_contant table tbody tr td{text-align:right;}
+#calc_body .calc-wrapper .calc-footer{border-top:1px solid #CCC;float:left;width:100%;}
+#calc_body .calc-wrapper .calc-body .calc-left-bar .loandetails{height: auto; }
+}
