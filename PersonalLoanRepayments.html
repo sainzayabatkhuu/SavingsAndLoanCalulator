@@ -236,13 +236,13 @@ function calculator() {
 			if(i!=0){
 				if(i > 7) {
 					hvsnegt += '<tr><td>'+i+'</td>'+
-					'<td>'+formatMoney(calcAm)+' aaa</td>'+
+					'<td>'+formatMoney(calcAm)+'</td>'+
 					'<td>'+formatMoney(repayment-(calcAm * rate * mounth))+'</td>'+
 					'<td>'+formatMoney(calcAm * rate )+'</td>'+
 					'<td>'+formatMoney(repayment)+'</td></tr>';
 				} else {
 					hvsnegt += '<tr print-enable="true"><td>'+i+'</td>'+
-					'<td>'+formatMoney(calcAm)+' aaa</td>'+
+					'<td>'+formatMoney(calcAm)+'</td>'+
 					'<td>'+formatMoney(repayment-(calcAm * rate * mounth))+'</td>'+
 					'<td>'+formatMoney(calcAm * rate )+'</td>'+
 					'<td>'+formatMoney(repayment)+'</td></tr>';
