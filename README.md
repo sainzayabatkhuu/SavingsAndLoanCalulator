@@ -1,5 +1,7 @@
 # Savings & Loan Calulator
 
+This is a simple web-based calculator that helps users calculate their Saving and Loan payments. It also includes an interactive chart to visualize the breakdown of payments.
+
 ## Demo
 
 Explore the live previews of the calculators:
